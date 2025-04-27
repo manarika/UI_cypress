@@ -1,0 +1,26 @@
+services:
+  app:
+    build:
+      context: ./app
+    container_name: app
+    ports:
+      - "3000:3000"
+    command: npm start
+    volumes:
+      - ./app:/app/src
+    working_dir: /app/src
+
+  cypress:
+    image: cypress/included:14.3.2
+    container_name: cypress-ui
+    working_dir: /e2e
+    volumes:
+      - .:/e2e
+      # ❌ REMOVE this bad line
+      # - ~/.cache/Cypress:/root/.cache/Cypress
+      # ❌ REMOVE also this one if not necessary:
+      # - node_modules:/e2e/node_modules
+    depends_on:
+      - app
+    command: >
+      npx cypress run

@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Simple UI</title>
 </head>
 <body>
-$END$
+<h1>Hello Cypress!</h1>
+<button id="click-me">Click me!</button>
+
+<script>
+  const button = document.getElementById('click-me');
+  button.addEventListener('click', () => {
+    alert('Button clicked!');
+  });
+</script>
 </body>
 </html>

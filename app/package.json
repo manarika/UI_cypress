@@ -1,0 +1,12 @@
+{
+  "name": "simple-ui",
+  "version": "1.0.0",
+  "description": "Simple UI for Cypress tests",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
